@@ -2,26 +2,22 @@ $(function(){
   var $imac     = $('.imac'),
       $imgs     = $imac.find('img'),
       totalImgs = $imgs.length - 1,
-      speed     = '3000';
+      speed     = '10000';
 
-  $imac
-    .append('<div class="arrow"><a href="#" class="aleft" /><a href="#" class="aright" /></div>');
+  $imac.append('<div class="arrow"><a href="#" class="aleft" /><a href="#" class="aright" /></div>');
 
-  $imgs
-    .not(':first')
-    .css('display', 'none')
-    .addClass('hidden');
+  $imgs.not(':first').css('display', 'none').addClass('hidden');
 
-  var slideNext = function(target) {
+  var slideNext = function(target){
     target.next().fadeOut(0).removeClass('hidden').fadeIn('slow');
   }
-  var slidePrev = function(target) {
+  var slidePrev = function(target){
     target.prev().fadeOut(0).removeClass('hidden').fadeIn('slow');
   }
-  var slideFirst = function(target) {
+  var slideFirst = function(target){
     target.closest($imac).find('img:first').fadeOut(0).removeClass('hidden').fadeIn('slow');
   }
-  var slideLast = function(target) {
+  var slideLast = function(target){
     target.closest($imac).find('img:last').fadeOut(0).removeClass('hidden').fadeIn('slow');
   }
 
@@ -31,7 +27,7 @@ $(function(){
       if(!target.hasClass('hidden')){
         target.fadeOut('slow', function(){
           target.addClass('hidden');
-          if(direction === 'prev') {
+          if(direction === 'prev'){
             sliderPrev(i, target);
           }else{
             sliderNext(i, target);
