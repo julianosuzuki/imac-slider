@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible"  content="IE=edge,chrome=1">
+
+    <title>iMac Slider - jQuery Slider Plugin</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .imac {
+        overflow: hidden;
+      }
+      .imac img {
+        display: none;
+      }
+      .imac img:first-child {
+        display: block;
+      }
+      .imac .arrow a {
+        display: block;
+        width: 30px;
+        height: 30px;
+      }
+      .imac .arrow .aleft {
+        background-color: red;
+      }
+      .imac .arrow .aright {
+        background-color: blue;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+     <div class="content">
+       <div class="imac">
+         <img src="http://lorempixel.com/600/400/abstract/1" alt="">
+         <img src="http://lorempixel.com/600/400/abstract/2" alt="">
+         <img src="http://lorempixel.com/600/400/abstract/3" alt="">
+         <img src="http://lorempixel.com/600/400/abstract/4" alt="">
+       </div>
+     </div>
+
+      <!-- SCRIPTS -->
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+      <script src="js/imac-slider.js"></script>
+      <!--[if lt IE 9]>
+        <script src="js/vendor/html5.js"></script>
+      <![endif]-->
+  </body>
+</html>
