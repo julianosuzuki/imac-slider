@@ -15,24 +15,46 @@
         padding: 0;
       }
       .imac {
+        position: relative;
         overflow: hidden;
+        background: url('images/imac.png') no-repeat;
+        padding: 29px 0 0 31px;
+        width: 707px;
+        height: 644px;
       }
       .imac img {
         display: none;
+        width: 675px;
+        height: 405px;
       }
       .imac img:first-child {
         display: block;
       }
+      .imac .arrow {
+        position: absolute;
+        top: 30%;
+        left: 0;
+        width: 100%;
+      }
       .imac .arrow a {
         display: block;
-        width: 30px;
-        height: 30px;
+        background: url('images/arrows.png') no-repeat 0 0;
+        margin: 0 40px;
+        width: 41px;
+        height: 51px;
       }
       .imac .arrow .aleft {
-        background-color: red;
+        float: left;
       }
       .imac .arrow .aright {
-        background-color: blue;
+        background-position: -51px 0;
+        float: right;
+      }
+      .imac:hover .arrow .aleft {
+        background-position: 0 -61px;
+      }
+      .imac:hover .arrow .aright {
+        background-position: -51px -61px;
       }
       .hidden {
         display: none;
@@ -46,6 +68,11 @@
          <img src="http://lorempixel.com/600/400/abstract/2" alt="">
          <img src="http://lorempixel.com/600/400/abstract/3" alt="">
          <img src="http://lorempixel.com/600/400/abstract/4" alt="">
+         <img src="http://lorempixel.com/600/400/abstract/5" alt="">
+         <img src="http://lorempixel.com/600/400/abstract/6" alt="">
+         <img src="http://lorempixel.com/600/400/abstract/7" alt="">
+         <img src="http://lorempixel.com/600/400/abstract/8" alt="">
+         <img src="http://lorempixel.com/600/400/abstract/9" alt="">
        </div>
      </div>
 

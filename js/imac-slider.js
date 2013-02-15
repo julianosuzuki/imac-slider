@@ -25,54 +25,54 @@ $(function(){
     target.closest($imac).find('img:last').fadeOut(0).removeClass('hidden').fadeIn('slow');
   }
 
-  var sliderNext = function (){
+  var slider = function (direction){
     $imgs.each(function(i){
       var target = $(this);
       if(!target.hasClass('hidden')){
         target.fadeOut('slow', function(){
           target.addClass('hidden');
-          if(i < totalImgs) {
-            slideNext(target);
+          if(direction === 'prev') {
+            sliderPrev(i, target);
           }else{
-            slideFirst(target);
+            sliderNext(i, target);
           }
         });
       }
     });
   }
 
-  var sliderPrev = function (){
-    $imgs.each(function(i){
-      var target = $(this);
-      if(!target.hasClass('hidden')){
-        target.fadeOut('slow', function(){
-          target.addClass('hidden');
-          if(!i == 0) {
-            slidePrev(target);
-          }else{
-            slideLast(target);
-          }
-        });
-      }
-    });
+  var sliderNext = function (i, target){
+    if(i < totalImgs) {
+      slideNext(target);
+    }else{
+      slideFirst(target);
+    }
   }
 
-  var int = setInterval(sliderNext, speed);
+  var sliderPrev = function (i, target){
+    if(!i == 0) {
+      slidePrev(target);
+    }else{
+      slideLast(target);
+    }
+  }
 
-  $('.arrow a').click(function(event){
+  var int = setInterval(slider, speed);
+
+  $imac.hover(function(){
     clearInterval(int);
+  }, function(){
     setTimeout(function() {
-      int = setInterval(sliderNext, speed);
+      int = setInterval(slider, speed);
     });
-    event.preventDefault();
   });
 
   $('.arrow .aleft').click(function(){
-    sliderNext();
+    slider('prev');
   });
 
   $('.arrow .aright').click(function(){
-    sliderPrev();
+    slider();
   });
 
 });
